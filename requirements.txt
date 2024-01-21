@@ -3,6 +3,5 @@ seaborn> 0.12.2
 scikit-learn >=1.2.2
 numpy>=1.23.5
 ultralytics>=8.0.105
-opencv-python==4.7.0.72
 pandas>=2.0.1
 streamlit
