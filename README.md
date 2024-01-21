@@ -1,1 +1,1 @@
-CS114 final project
+*CS114 Final Project*
