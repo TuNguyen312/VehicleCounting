@@ -212,19 +212,20 @@ if form_submitted:
                     )
                     for i, package in enumerate(presults):
                         ux, uy, lx, ly, id, direction, clsid = package
-                        cv2.rectangle(roi, (ux, uy), (lx, ly), color_ref[clsid], 2)
-                        cv2.putText(
-                            roi,
-                            f"id: {id} class: {class_ref[classes[i]]} conf: {confs[i]:0.2f}",
-                            (ux, uy - 10),
-                            cv2.FONT_HERSHEY_SIMPLEX,
-                            0.5,
-                            color_ref[clsid],
-                            2,
-                        )
+                        if clsid == 0:
+                            cv2.rectangle(roi, (ux, uy), (lx, ly), color_ref[clsid], 2)
+                            cv2.putText(
+                                roi,
+                                f"id: {id} class: {class_ref[classes[i]]} conf: {confs[i]:0.2f}",
+                                (ux, uy - 10),
+                                cv2.FONT_HERSHEY_SIMPLEX,
+                                0.5,
+                                color_ref[clsid],
+                                2,
+                            )
                 cv2.putText(
                     frame,
-                    f"Vehicle Count: {str(tracker.count)}",
+                    f"Vehicle Count: {str(tracker.count['car'])}",
                     (10, 20),
                     cv2.FONT_HERSHEY_SIMPLEX,
                     0.5,
