@@ -234,7 +234,7 @@ if form_submitted:
                 )
                 cv2.putText(
                     frame,
-                    f"Active Vehicle: {str(len(results))}",
+                    f"Active Vehicle: {str(classes.count(0))}",
                     (10, 40),
                     cv2.FONT_HERSHEY_SIMPLEX,
                     0.5,
